@@ -2,12 +2,14 @@ package com.github.rahulstech.tts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-public class TtsApplication {
+@EnableAsync
+public class TTSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TtsApplication.class, args);
+		SpringApplication.run(TTSApplication.class, args);
 	}
 
 }
