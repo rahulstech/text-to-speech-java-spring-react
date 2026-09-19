@@ -1,7 +1,8 @@
 package com.github.rahulstech.tts.controller;
 
-import com.github.rahulstech.tts.dto.ConvertTextToSpeechRequest;
-import com.github.rahulstech.tts.dto.TTSJobResponse;
+import com.github.rahulstech.tts.dto.CreateSpeechJobResultResponse;
+import com.github.rahulstech.tts.dto.JobStatusResponse;
+import com.github.rahulstech.tts.dto.TTSRequest;
 import com.github.rahulstech.tts.service.TTSService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,13 +17,13 @@ public class TTSController {
 
     private final TTSService ttsSrvc;
 
-    @GetMapping("/job/{jobId}")
-    public TTSJobResponse getJob(@PathVariable UUID jobId) {
-        return ttsSrvc.getJob(jobId);
+    @PostMapping
+    public JobStatusResponse createSpeech(@Valid @RequestBody TTSRequest body) {
+        return ttsSrvc.createSpeech(body);
     }
 
-    @PostMapping
-    public TTSJobResponse convertTextToSpeech(@Valid @RequestBody ConvertTextToSpeechRequest body) {
-        return ttsSrvc.convertTextToSpeech(body);
+    @GetMapping("/job/{job_id}/result")
+    public CreateSpeechJobResultResponse getCreateSpeechJobResult(@PathVariable("job_id") UUID jobId) {
+        return ttsSrvc.getCreateSpeechJobResult(jobId);
     }
 }

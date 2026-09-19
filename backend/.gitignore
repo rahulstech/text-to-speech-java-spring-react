@@ -39,3 +39,4 @@ out/
 !.env.example
 generated-audio/
 !generated-audio/sample.wav
+scripts/

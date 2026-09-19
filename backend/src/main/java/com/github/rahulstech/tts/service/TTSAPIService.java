@@ -1,9 +1,11 @@
 package com.github.rahulstech.tts.service;
 
-import java.util.UUID;
+import com.github.rahulstech.tts.dto.TTSAPIRequest;
+import org.jspecify.annotations.Nullable;
+
 import java.util.concurrent.CompletableFuture;
 
 public interface TTSAPIService {
 
-    CompletableFuture<String> requestTTS(String text);
+    CompletableFuture<String> requestTTS(TTSAPIRequest params, @Nullable Runnable onStart);
 }

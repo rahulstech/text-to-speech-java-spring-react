@@ -9,7 +9,6 @@ public record GeminiTTSAPIResponse(
 
     public record Content(
             String data,
-            int sample_rate,
             String mime_type
     ) {}
 }

@@ -44,14 +44,11 @@ public class JobEntity {
 
         FAIL,
 
-        CANCELED
-    }
+        ;
 
-    public final boolean isFinished() {
-        return  status == Status.SUCCESSFUL
-                || status == Status.FAIL
-                || status == Status.CANCELED;
+        public final boolean isFinished() {
+            return  this == Status.SUCCESSFUL
+                    || this == Status.FAIL;
+        }
     }
-
-    public final boolean isCanceled() { return status == Status.CANCELED; }
 }

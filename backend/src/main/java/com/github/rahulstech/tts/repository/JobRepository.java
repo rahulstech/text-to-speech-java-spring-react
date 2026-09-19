@@ -1,4 +1,4 @@
-package com.github.rahulstech.tts;
+package com.github.rahulstech.tts.repository;
 
 import com.github.rahulstech.tts.entity.JobEntity;
 import org.jspecify.annotations.NonNull;
